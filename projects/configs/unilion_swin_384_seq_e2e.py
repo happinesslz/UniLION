@@ -521,16 +521,15 @@ dist_params = dict(backend='nccl')
 log_level = 'INFO'
 work_dir = None
 resume_from=None
-# load_from = "unilion_swin_384_seq_perception_epoch_24.pth" # path to your pretrained single frame perception checkpoint 
-load_from='ckpts/iter_42192.pth'
+load_from = "unilion_swin_384_seq_perception_epoch_24.pth" # path to your pretrained single frame perception checkpoint
 workflow = [('train', 1)]
 gpu_ids = range(0, 8)
 
 eval_mode = dict(
     with_det=tasks['det'],
     with_tracking=False,
-    with_occ=False,#tasks['occ'],
-    with_map=False,#tasks['map'],
+    with_occ=tasks['occ'],
+    with_map=tasks['map'],
     with_motion=tasks['motion'],
     with_planning=tasks['planning'],
     tracking_threshold=0.2,

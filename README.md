@@ -43,7 +43,7 @@
 |    UniLION   |     L    | 72.3 | 67.5 |   72.6   |   71.7  |   46.8    | - | - | - |[config]()| - |
 |    UniLION   |     LT   | 73.0 | 68.9 |   73.3   |   72.4  |   49.6    | 0.58 / 0.39 | 0.60 | 0.27 |[config]()| - |
 |    UniLION   |     LC   | 74.9 | 72.2 |   76.2   |   72.3  |   50.8    | - | - | - |[config]()| - |
-|    UniLION   |     LCT  | 75.4 | 73.2 |   76.5   |   73.3  |   51.3    | 0.57 / 0.37 | 0.65 | 0.18 |[config]()| [model]() |
+|    UniLION   |     LCT  | 75.4 | 73.2 |   76.5   |   73.3  |   51.3    | 0.57 / 0.37 | 0.65 | 0.18 |[config](projects/configs/unilion_swin_384_seq_e2e.py)| [model](https://drive.google.com/file/d/18fpw-EJ-eJikVPczoRqyhLnXjJzjOnpv/view?usp=drive_link) |
 
 * **3D Object Detection**
   

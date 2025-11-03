@@ -1,0 +1,7 @@
+lyft_dataset_sdk
+numpy
+nuscenes-devkit
+plyfile
+scikit-image
+# by default we also use tensorboard to log results
+tensorboard

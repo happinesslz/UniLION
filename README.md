@@ -16,8 +16,6 @@
 ✉ Corresponding author.
 <br>
 
-[**Project Page**](https://happinesslz.github.io/projects/UniLION) | [**arXiv 2025**]()
-
 <img src="./assets/arch.png" alt="Image 2" width="100%" style="margin: 0 auto;" >
 
 </div>
@@ -28,7 +26,7 @@
 
 * **Unified Model**. UniLION enables parameter sharing across different input formats. Specifically, once trained with multi-modal temporal data, the same UniLION model can be directly deployed across different sensor configurations and temporal settings (e.g., LiDAR-only, temporal LiDAR, or multi-modal fusion) without retraining. 💪
 
-* **Unified Representation**. UniLION highly compresses heterogeneous multi-modal and temporal information into a compact BEV feature representation that serves as a shared strong representation for autonomous driving.
+* **Unified Representation**. UniLION highly compresses heterogeneous multi-modal and temporal information into a compact BEV feature representation that serves as a shared strong representation for autonomous driving. 💪
 
 * **Strong performance**. UniLION achieves competitive and SOTA performance across comprehensive autonomous driving tasks including 3D perception, motion prediction, and planning. 💪
 
@@ -40,9 +38,9 @@
 
 | Model        | Modality |  NDS |  mAP |  AMOTA   |  mIoU   |  RayIoU   |  minADE (Car/Ped.)  |  L2   |  Col.   | Config | Checkpoint |
 |--------------|:--------:|:----:|:----:|:--------:|:-------:|:---------:|:---------:|:-----:|:------:|:------:|:----------:|
-|    UniLION   |     L    | 72.3 | 67.5 |   72.6   |   71.7  |   46.8    | - | - | - |[config]()| - |
-|    UniLION   |     LT   | 73.0 | 68.9 |   73.3   |   72.4  |   49.6    | 0.58 / 0.39 | 0.60 | 0.27 |[config]()| - |
-|    UniLION   |     LC   | 74.9 | 72.2 |   76.2   |   72.3  |   50.8    | - | - | - |[config]()| - |
+|    UniLION   |     L    | 72.3 | 67.5 |   72.6   |   71.7  |   46.8    | - | - | - | - | - |
+|    UniLION   |     LT   | 73.0 | 68.9 |   73.3   |   72.4  |   49.6    | 0.58 / 0.39 | 0.60 | 0.27 | - | - |
+|    UniLION   |     LC   | 74.9 | 72.2 |   76.2   |   72.3  |   50.8    | - | - | - |[config](https://github.com/happinesslz/UniLION/blob/main/projects/configs/unilion_swin_384_perception.py)| - |
 |    UniLION   |     LCT  | 75.4 | 73.2 |   76.5   |   73.3  |   51.3    | 0.57 / 0.37 | 0.65 | 0.18 |[config](projects/configs/unilion_swin_384_seq_e2e.py)| [model](https://drive.google.com/file/d/18fpw-EJ-eJikVPczoRqyhLnXjJzjOnpv/view?usp=drive_link) |
 
 * **3D Object Detection**
@@ -103,10 +101,25 @@ Please refer to [INSTALL.md](docs/INSTALL.md) for the installation of UniLION co
 ## Getting Started
 * Train UniLION on nuScenes
 ```shell script
-tools/dist_train.sh projects/<CONFIGS> 8
+# First stage
+
+tools/dist_train.sh projects/unilion_swin_384_det.py 8
+
+# Second stage
+
+tools/dist_train.sh projects/unilion_swin_384_det_map.py 8
+
+# Third stage
+
+tools/dist_train.sh projects/unilion_swin_384_seq_perception.py 8
+
+# Fourth stage
+
+tools/dist_train.sh projects/unilion_swin_384_seq_e2e.py 8
 ```
 
 * Test UniLION on nuScenes
+  
 You can freely select the tasks to be evaluated in the config.
 
 ```shell script

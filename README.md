@@ -1,6 +1,6 @@
 <div align="center">
 
-### <img src="./assets/lion.jpg" alt="Image 2" width="4%" style="margin: 0 auto;" > [UniLION: Towards Unified Autonomous Driving Model with Linear Group RNNs](https://arxiv.org/abs/2407.18232)
+### <img src="./assets/lion.jpg" alt="Image 2" width="4%" style="margin: 0 auto;" > [UniLION: Towards Unified Autonomous Driving Model with Linear Group RNNs](http://arxiv.org/abs/2511.01768)
 
 [Zhe Liu](https://happinesslz.github.io) <sup>1, 2</sup>,
 [Jinghua Hou](https://github.com/AlmoonYsl) <sup>1</sup>,
@@ -103,20 +103,22 @@ Please refer to [INSTALL.md](docs/INSTALL.md) for the installation of UniLION co
 ```shell script
 # First stage
 
-tools/dist_train.sh projects/unilion_swin_384_det.py 8
+tools/dist_train.sh projects/unilion_swin_384_det_map.py 8
 
 # Second stage
 
-tools/dist_train.sh projects/unilion_swin_384_det_map.py 8
+tools/dist_train.sh projects/unilion_swin_384_seq_perception.py 8
 
 # Third stage
 
-tools/dist_train.sh projects/unilion_swin_384_seq_perception.py 8
-
-# Fourth stage
-
 tools/dist_train.sh projects/unilion_swin_384_seq_e2e.py 8
 ```
+Note: for better performance, you can additionly train 3D object detection for providing the pretrained model in the first stage.
+```shell script
+tools/dist_train.sh projects/unilion_swin_384_det.py 8
+```
+# Second stage
+
 
 * Test UniLION on nuScenes
   
@@ -124,6 +126,12 @@ You can freely select the tasks to be evaluated in the config.
 
 ```shell script
 tools/dist_test.sh projects/<CONFIGS> 8 <CKPT> --eval mAP
+```
+
+Besides, you can use our released model ([UniLION model](https://drive.google.com/file/d/18fpw-EJ-eJikVPczoRqyhLnXjJzjOnpv/view?usp=drive_link)) to evaluate all results:
+
+```shell script
+tools/dist_test.sh projects/projects/configs/unilion_swin_384_seq_e2e.py 8 <CKPT> --eval mAP
 ```
 
 ## TODO

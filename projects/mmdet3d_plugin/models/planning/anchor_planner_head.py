@@ -40,7 +40,6 @@ class ConvFuser(nn.Module):
 class AnchorPlannerHead(nn.Module):
     def __init__(
             self,
-            use_ego=False,
             planning_anchor=None,
             in_channels=128 * 3,
             hidden_channel=128,
@@ -62,7 +61,6 @@ class AnchorPlannerHead(nn.Module):
 
         self.in_channels = in_channels
         self.num_heads = num_heads
-        self.use_ego = use_ego
         self.num_decoder_layers = num_decoder_layers
         self.hidden_channel = hidden_channel
         self.bn_momentum = bn_momentum
@@ -207,8 +205,7 @@ class AnchorPlannerHead(nn.Module):
         planning_anchor = self.planning_anchor_encoder(planning_anchor)
         planning_anchor = rearrange(planning_anchor, 'b l k c -> b (l k) c')
 
-        # ego_status_feat = self.ego_encoder(outputs_ego_status.squeeze(1)).unsqueeze(1)
-        ego_status_feat = self.ego_encoder(ego_status).unsqueeze(1)
+        ego_status_feat = self.ego_encoder(outputs_ego_status.squeeze(1)).unsqueeze(1)
         ego_query = ego_query + planning_anchor + ego_status_feat
         gt_ego_fut_cmd_feat = repeat(gt_ego_fut_cmd_feat, 'b l c -> b (l k) c', k=ego_query.shape[1])
         ego_query = self.ego_info(ego_query, gt_ego_fut_cmd_feat)

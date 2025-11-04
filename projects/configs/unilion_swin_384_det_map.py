@@ -494,7 +494,7 @@ log_config = dict(
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
 work_dir = None
-load_from = "unilion_swin_384_det_epoch_36.pth" # path to your pretrained detection checkpoint 
+load_from = None 
 resume_from = None
 workflow = [('train', 1)]
 gpu_ids = range(0, 8)

@@ -83,8 +83,8 @@
   
 | Model        | Modality | minADE (Car) | minADE (Ped) | EPA |
 |--------------|:--------:|:------------:|:------------:|:---:|
-|    UniLION   |     LT   |  49.6  | 0.58 | 0.39 | 0.647 |
-|    UniLION   |     LCT  |  51.3  | 0.57 | 0.37 | 0.678 |
+|    UniLION   |     LT   | 0.58 | 0.39 | 0.647 |
+|    UniLION   |     LCT  | 0.57 | 0.37 | 0.678 |
 
 * **Planning**
   

@@ -99,7 +99,7 @@ Please refer to [INSTALL.md](docs/INSTALL.md) for the installation of UniLION co
 
 
 ## Getting Started
-* Train UniLION on nuScenes
+### Train UniLION on nuScenes
 ```shell script
 # First stage
 
@@ -117,10 +117,8 @@ Note: for better performance, you can additionly train 3D object detection for p
 ```shell script
 tools/dist_train.sh projects/unilion_swin_384_det.py 8
 ```
-# Second stage
 
-
-* Test UniLION on nuScenes
+### Test UniLION on nuScenes
   
 You can freely select the tasks to be evaluated in the config.
 

@@ -144,14 +144,14 @@ tools/dist_test.sh projects/projects/configs/unilion_swin_384_seq_e2e.py 8 <CKPT
   author={Zhe Liu, Jinghua Hou, Xingyu Wang, Xiaoqing Ye, Jingdong Wang, Hengshuang Zhao, Xiang Bai},
   journal={Advances in Neural Information Processing Systems},
   year={2024}
-  }
+}
 
 @article{liu2025unilion,
   title={UniLION:Towards Unified Autonomous Driving Model with Linear Group RNNs},
   author={Zhe Liu, Jinghua Hou, Xiaoqing Ye, Jingdong Wang, Hengshuang Zhao, Xiang Bai},
-  journal={arxiv},
+  journal={arXiv preprint arXiv:2511.01768},
   year={2025}
-  }
+}
 ```
 
 ## Acknowledgements

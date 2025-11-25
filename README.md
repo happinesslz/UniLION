@@ -119,7 +119,7 @@ python tools/data_converter/nuscenes_converter.py nuscenes \
     --canbus ./data/nuscenes \
     --out-dir ./data/nuscenes \
     --extra-tag nuscenes \
-    --db-save-path /grp01/cs_hszhao/zliu/code/MM-LION/data/nuscenes/ \
+    --db-save-path ./data/nuscenes/ \
     --version v1.0
 ```
 

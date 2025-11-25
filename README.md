@@ -97,6 +97,56 @@
 ## Installation
 Please refer to [INSTALL.md](docs/INSTALL.md) for the installation of UniLION codebase.
 
+# Data Processing
+First, download the nuscenes dataset
+```
+├── can_bus
+├── maps
+├── occ3d
+├── samples
+├── sweeps 
+└── v1.0-trainval
+```
+
+The dataset of occ3d can be downloaded from: https://tsinghua-mars-lab.github.io/Occ3D/
+
+Then, we run the following script:
+```
+export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
+export PYTHONPATH="$(dirname $0)/..":$PYTHONPATH
+python tools/data_converter/nuscenes_converter.py nuscenes \
+    --root-path ./data/nuscenes \
+    --canbus ./data/nuscenes \
+    --out-dir ./data/nuscenes \
+    --extra-tag nuscenes \
+    --db-save-path /grp01/cs_hszhao/zliu/code/MM-LION/data/nuscenes/ \
+    --version v1.0
+```
+
+For planning anchor generation, please run:
+
+```shell script
+python kmeans_planning.py
+```
+
+After completing all the steps above, the final data structure should be organized as follows:
+```
+├── can_bus
+├── kmeans_motion_6.npy
+├── kmeans_planning_4096.npy
+├── kmeans_planning_6.npy
+├── maps
+├── nuscenes_dbinfos_train.pkl
+├── nuscenes_gt_database
+├── nuscenes_infos_train.pkl
+├── nuscenes_infos_val.pkl
+├── occ3d
+├── samples
+├── sweeps 
+└── v1.0-trainval
+```
+
+
 
 ## Getting Started
 ### Train UniLION on nuScenes

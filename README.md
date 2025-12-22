@@ -31,7 +31,12 @@
 * **Strong performance**. UniLION achieves competitive and SOTA performance across comprehensive autonomous driving tasks including 3D perception, motion prediction, and planning. 💪
 
 ## News
-* **2025.11.04**: UniLION paper released. 🔥
+* **2025.12.15**: [DrivePI](http://arxiv.org/abs/2512.12799) paper released. 🔥
+* **2025.12.15**: [GenieDrive](https://github.com/Huster-YZY/GenieDrive) (Physics-Aware Driving World Model) paper released. 🔥
+* **2025.06.16**: Our new work about Transformer-Mamba architecture [HybridTM](https://github.com/deepinact/HybridTM) have been accepted by IROS 2025 as **Oral** presentation. 🎉
+* **2024.09.26**: LION has been accepted by NeurIPS 2024. 🎉
+* **2024.07.25**: LION paper released. 🔥
+* **2024.07.02**: Our new works [OPEN](https://github.com/AlmoonYsl/OPEN) and [SEED](https://github.com/happinesslz/SEED) have been accepted by ECCV 2024. 🎉
 
 ## Results
 * **nuScenes Validation Set**

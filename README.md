@@ -134,6 +134,11 @@ For planning anchor generation, please run:
 python kmeans_planning.py
 ```
 
+Dwonload image pretrained model
+
+We adopt the same image pretrained model with [bevfusion](https://github.com/mit-han-lab/bevfusion/blob/main/tools/download_pretrained.sh). You could download this file in [swint_nuimg_pretrained.pth](https://www.dropbox.com/scl/fi/f3e67wgn2omoftah4ceri/swint-nuimages-pretrained.pth?rlkey=k9kafympye80b3b1quutti4yq)
+
+
 After completing all the steps above, the final data structure should be organized as follows:
 ```
 ├── can_bus
@@ -155,6 +160,7 @@ After completing all the steps above, the final data structure should be organiz
 
 ## Getting Started
 ### Train UniLION on nuScenes
+
 ```shell script
 # First stage
 
